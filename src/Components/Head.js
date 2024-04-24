@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-
+import { FiSun } from "react-icons/fi";
+import { IoSunny } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu, closeMenu } from "./utils/appSlice";
 
@@ -18,6 +19,12 @@ const Head = () => {
   const closeMenuHandler = () => {
     dispatch(closeMenu());
   };
+  const [toggle,setToggle] = useState(false);
+  const toggle1 = ()=>{
+    setToggle(!toggle);
+  }
+
+
 
   return (
     <>
@@ -45,6 +52,9 @@ const Head = () => {
           </button>
         </div>
 
+        <button onClick={toggle1}>
+          {toggle ? <FiSun size={30} /> : <IoSunny size={30} />}
+        </button>
         <div className="col-span-1">
           <FaRegUser size={35} />
         </div>
@@ -54,4 +64,5 @@ const Head = () => {
 };
 
 export default Head;
+
 
