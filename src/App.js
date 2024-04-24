@@ -24,7 +24,7 @@ const appRouter = createBrowserRouter([
   },
 ]);
 
-function App() {
+function App() { 
   
   return (
     <Provider store={store}>

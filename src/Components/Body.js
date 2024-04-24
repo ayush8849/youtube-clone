@@ -8,7 +8,7 @@ const Body = () =>{
         <div className="flex">
         <Sidebar/>
         <Outlet/>
-        
+        <h1>Hello</h1>
         </div>
     )
 };
